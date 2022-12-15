@@ -18,4 +18,13 @@ class ValidationTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessageContaining(ERROR_MESSAGE);
     }
+
+    @DisplayName("사용자의 정답 입력이 1과 9사이의 수 이외의 값이 있으면 에러가 발생한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"r12", "!sf", "ㄱ2ㄴ", "?!ㄴ", " ", ""})
+    void checkUserAnswerConsistOf1To9(String input) {
+        assertThatThrownBy(() -> Validation.validateUserAnswerInput(input))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining(ERROR_MESSAGE);
+    }
 }
