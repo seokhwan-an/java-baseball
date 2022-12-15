@@ -11,4 +11,11 @@ public class InputView {
         Validation.validateUserAnswerInput(input);
         return input;
     }
+
+    // 사용자가 재시작 및 종료 여부를 입력하는 기능
+    public static String restartOrExit() {
+        String input = Console.readLine();
+        Validation.validateUserRestartOrExitInput(input);
+        return input;
+    }
 }
