@@ -27,4 +27,13 @@ class ValidationTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessageContaining(ERROR_MESSAGE);
     }
+
+    @DisplayName("사용자의 정답 입력이 서로 다른 수로 구성되어 있지 않으면 에러가 발생한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"111", "122", "221", "121"})
+    void checkUserAnswerOverlap(String input) {
+        assertThatThrownBy(() -> Validation.validateUserAnswerInput(input))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining(ERROR_MESSAGE);
+    }
 }
