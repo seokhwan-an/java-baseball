@@ -27,12 +27,12 @@ public class Hint {
     }
 
     // 정답인지 판별하는 기능
-    public boolean isAnswer() {
+    public boolean isNotAnswer() {
         if(strike == ANSWER) {
             System.out.println(ANSWER_MENT);
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     public void init() {
