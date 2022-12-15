@@ -35,4 +35,8 @@ public class Hint {
         return false;
     }
 
+    public void init() {
+        strike = 0;
+        ball = 0;
+    }
 }
