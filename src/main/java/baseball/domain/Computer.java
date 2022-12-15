@@ -1,6 +1,6 @@
 package baseball.domain;
 
-import static baseball.domain.util.Constant.*;
+import static baseball.util.Constant.*;
 
 import java.util.List;
 
