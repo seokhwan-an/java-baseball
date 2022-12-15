@@ -20,4 +20,17 @@ class ComputerTest {
         // then
         Assertions.assertThat(answer.size()).isEqualTo(3);
     }
+
+    @DisplayName("정답이 숫자 1과 9사이의 수로 구성되었는지 테스트")
+    @Test
+    void checkAnswerConsistOf1To9() {
+        // given
+        List<Integer> answer = computer.createAnswer();
+
+        // when
+        boolean check = answer.stream().allMatch(num -> 1 <= num && num <= 9);
+
+        // then
+        Assertions.assertThat(check).isTrue();
+    }
 }
