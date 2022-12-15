@@ -19,9 +19,10 @@ public class BaseballGameController {
 
     // 게임을 진행하는 기능
     public void run() {
+        OutputView.printStart();
         do {
-            OutputView.printStart();
-            List<Integer> answer = computer.createAnswer();
+            computer.init();
+            List<Integer>answer = computer.createAnswer();
             round(answer);
         } while (GameCommand.isRestart(InputView.restartOrExit()));
     }
@@ -33,6 +34,6 @@ public class BaseballGameController {
             String userAnswer = InputView.userAnswer();
             int[] result = hint.giveHint(answer, userAnswer);
             OutputView.printHint(result);
-        } while(hint.isAnswer());
+        } while(hint.isNotAnswer());
     }
 }
