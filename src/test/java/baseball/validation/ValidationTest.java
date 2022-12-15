@@ -36,4 +36,12 @@ class ValidationTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessageContaining(ERROR_MESSAGE);
     }
+    @DisplayName("사용자의 재시작 및 종료 입력이 1과 2이외이 값이 들어오면 에러가 발생한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"r", "ㄴ", "0", "!", "", " "})
+    void checkUserGameCommand(String input) {
+        assertThatThrownBy(() -> Validation.validateUserRestartOrExitInput(input))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining(ERROR_MESSAGE);
+    }
 }
