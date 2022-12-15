@@ -11,16 +11,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class HintTest {
+class ResultTest {
 
-    private Hint hint = new Hint();
+    private Result result = new Result();
 
     @DisplayName("컴퓨터가 제시한 정답과 사용자의 입력값을 비교해서 힌트를 제공하는 기능 테스트")
     @ParameterizedTest
     @MethodSource("generateData")
     void testgiveHint(List<Integer> answer, String userInput, int[] result) {
         // given
-        int[] hintResult = hint.giveHint(answer, userInput);
+        int[] hintResult = this.result.giveHint(answer, userInput);
 
         assertThat(hintResult).isEqualTo(result);
     }

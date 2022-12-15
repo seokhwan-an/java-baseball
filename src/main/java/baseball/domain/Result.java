@@ -4,12 +4,12 @@ import static baseball.util.Constant.*;
 
 import java.util.List;
 
-public class Hint {
+public class Result {
 
     private int strike;
     private int ball;
 
-    public Hint() {
+    public Result() {
         strike = 0;
         ball = 0;
     }

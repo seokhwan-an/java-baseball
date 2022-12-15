@@ -2,7 +2,7 @@ package baseball.Controller;
 
 import baseball.domain.Computer;
 import baseball.domain.GameCommand;
-import baseball.domain.Hint;
+import baseball.domain.Result;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import java.util.List;
@@ -10,11 +10,11 @@ import java.util.List;
 public class BaseballGameController {
 
     private Computer computer;
-    private Hint hint;
+    private Result result;
 
-    public BaseballGameController(Computer computer, Hint hint) {
+    public BaseballGameController(Computer computer, Result result) {
         this.computer = computer;
-        this.hint = hint;
+        this.result = result;
     }
 
     // 게임을 진행하는 기능
@@ -30,10 +30,10 @@ public class BaseballGameController {
     // 라운드 진행
     private void round(List<Integer> answer) {
         do {
-            hint.init();
+            result.init();
             String userAnswer = InputView.userAnswer();
-            int[] result = hint.giveHint(answer, userAnswer);
+            int[] result = this.result.giveHint(answer, userAnswer);
             OutputView.printHint(result);
-        } while(hint.isNotAnswer());
+        } while(result.isNotAnswer());
     }
 }
