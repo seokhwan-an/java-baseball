@@ -13,4 +13,8 @@ public enum GameCommand {
         return input.equals(restart.gameCommand) || input.equals(exit.gameCommand);
     }
 
+    public static boolean isRestart(String input) {
+        return input.equals(restart.gameCommand);
+    }
+
 }
