@@ -17,6 +17,15 @@ public class BaseballGameController {
         this.hint = hint;
     }
 
+    // 게임을 진행하는 기능
+    public void run() {
+        do {
+            OutputView.printStart();
+            List<Integer> answer = computer.createAnswer();
+            round(answer);
+        } while (GameCommand.isRestart(InputView.restartOrExit()));
+    }
+
     // 라운드 진행
     private void round(List<Integer> answer) {
         do {
