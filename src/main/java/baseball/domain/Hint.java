@@ -26,4 +26,9 @@ public class Hint {
         return new int[] {strike, ball};
     }
 
+    // 정답인지 판별하는 기능
+    public boolean isAnswer() {
+        return strike == ANSWER;
+    }
+
 }
