@@ -2,6 +2,7 @@ package baseball.validation;
 
 import static baseball.util.Constant.*;
 
+import baseball.domain.GameCommand;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,7 +18,14 @@ public class Validation {
         validateUserAnswerOverlap(input);
     }
 
-    // 사용자의 정답 입력의 길이가 3인지 검증하는 기
+    // 사용자의 재시작 및 종료 여부 입렵이 1과 2인지 검증하는 기능
+    public static void validateUserRestartOrExitInput(String input) {
+        if(!GameCommand.isValidCommand(input)) {
+            throw new IllegalArgumentException(USER_COMMAND_ERROR);
+        }
+    }
+
+    // 사용자의 정답 입력의 길이가 3인지 검증하는 기능
     private static void validateUserAnswerLenght3(String input) {
         if (input.length() != LENGTH) {
             throw new IllegalArgumentException(USER_ANSWER_LENGTH_ERROR);
