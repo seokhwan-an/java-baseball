@@ -28,7 +28,11 @@ public class Hint {
 
     // 정답인지 판별하는 기능
     public boolean isAnswer() {
-        return strike == ANSWER;
+        if(strike == ANSWER) {
+            System.out.println(ANSWER_MENT);
+            return true;
+        }
+        return false;
     }
 
 }
