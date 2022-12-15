@@ -2,7 +2,9 @@ package baseball.domain;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,5 +34,18 @@ class ComputerTest {
 
         // then
         Assertions.assertThat(check).isTrue();
+    }
+
+    @DisplayName("정답이 서로 다른 숫자로 구성되어 있는지 테스트")
+    @Test
+    void checkAnswerOverlap() {
+        // given
+        List<Integer> answer = computer.createAnswer();
+
+        // when
+        Set<Integer> check = new HashSet<>(answer);
+
+        // then
+        Assertions.assertThat(check.size()).isEqualTo(3);
     }
 }
