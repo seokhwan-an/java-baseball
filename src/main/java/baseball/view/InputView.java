@@ -17,7 +17,7 @@ public class InputView {
 
     // 사용자가 재시작 및 종료 여부를 입력하는 기능
     public static String restartOrExit() {
-        System.out.print(USER_GAME_RESTART_EXIT_QUESTION);
+        System.out.println(USER_GAME_RESTART_EXIT_QUESTION);
         String input = Console.readLine();
         Validation.validateUserRestartOrExitInput(input);
         return input;
