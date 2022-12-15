@@ -16,4 +16,8 @@ public class Computer {
     private boolean checkNumberConsistOf1To9(int num) {
         return MIN_NUMBER <= num && num <= MAX_NUMBER;
     }
+
+    private boolean checkOverlap(int num) {
+        return answerNumber.contains(num);
+    }
 }
