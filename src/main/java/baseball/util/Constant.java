@@ -11,4 +11,6 @@ public class Constant {
     public static final String USER_ANSWER_CONSIST_OF_1_TO_9_ERROR = "[ERROR] 1과 9사이의 수만 입력되어야 합니다.";
     public static final String USER_ANSWER_OVERLAP_ERROR = "[ERROR] 서로다른 숫자로 구성되어야 합니다.";
     public static final String USER_COMMAND_ERROR = "[ERROR] 1과 2만 입력하셔야 합니다.";
+
+    public static final String GAME_START = "숫자 야구 게임을 시작합니다.";
 }
